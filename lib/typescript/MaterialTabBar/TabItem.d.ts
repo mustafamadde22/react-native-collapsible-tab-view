@@ -5,4 +5,4 @@ export declare const TABBAR_HEIGHT = 48;
 /**
  * Any additional props are passed to the pressable component.
  */
-export declare const MaterialTabItem: <T extends TabName = any>({ name, index, onPress, onLayout, scrollEnabled, indexDecimal, label, style, labelStyle, activeColor, inactiveColor, inactiveOpacity, pressColor, pressOpacity, ...rest }: MaterialTabItemProps<T>) => React.ReactElement;
+export declare const MaterialTabItem: <T extends TabName = any>({ name, index, onPress, onLayout, scrollEnabled, indexDecimal, label, style, labelStyle, activeLabelStyle, activeColor, inactiveColor, inactiveOpacity, pressColor, pressOpacity, ...rest }: MaterialTabItemProps<T>) => React.ReactElement;
