@@ -74,6 +74,7 @@ export const Container = React.memo(
         renderHeader = makeRenderFunction(HeaderComponent),
         renderTabBar = makeRenderFunction(TabBarComponent),
         headerContainerStyle,
+        tabBarContainerStyle,
         cancelTranslation,
         containerStyle,
         lazy,
@@ -505,7 +506,11 @@ export const Container = React.memo(
                   })}
               </View>
               <View
-                style={[styles.container, styles.tabBarContainer]}
+                style={[
+                  styles.container,
+                  styles.tabBarContainer,
+                  tabBarContainerStyle,
+                ]}
                 onLayout={getTabBarHeight}
                 pointerEvents="box-none"
               >

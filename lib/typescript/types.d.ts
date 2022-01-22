@@ -66,6 +66,7 @@ export declare type CollapsibleProps = {
     renderHeader?: (props: TabBarProps<TabName>) => React.ReactElement | null;
     renderTabBar?: (props: TabBarProps<TabName>) => React.ReactElement | null;
     headerContainerStyle?: StyleProp<Animated.AnimateStyle<ViewStyle>>;
+    tabBarContainerStyle?: StyleProp<ViewStyle>;
     containerStyle?: StyleProp<ViewStyle>;
     cancelTranslation?: boolean;
     /**
