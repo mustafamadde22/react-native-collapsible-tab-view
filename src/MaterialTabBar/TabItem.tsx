@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { StyleSheet, Pressable, Platform } from 'react-native'
 import Animated, {
   interpolate,
@@ -24,14 +24,17 @@ export const MaterialTabItem = <T extends TabName = any>({
   label,
   style,
   labelStyle,
+  activeLabelStyle,
   activeColor = DEFAULT_COLOR,
   inactiveColor = DEFAULT_COLOR,
   inactiveOpacity = 0.7,
   pressColor = '#DDDDDD',
-  pressOpacity = Platform.OS === 'ios' ? 0.2 : 1,
+  pressOpacity = Platform.OS === 'ios' ? 1 : 1,
   ...rest
 }: MaterialTabItemProps<T>): React.ReactElement => {
+  const isActive = useRef<boolean>(false)
   const stylez = useAnimatedStyle(() => {
+    isActive.current = Math.abs(index - indexDecimal.value) < 0.5
     return {
       opacity: interpolate(
         indexDecimal.value,
@@ -62,7 +65,14 @@ export const MaterialTabItem = <T extends TabName = any>({
       }}
       {...rest}
     >
-      <Animated.Text style={[styles.label, stylez, labelStyle]}>
+      <Animated.Text
+        style={[
+          styles.label,
+          stylez,
+          labelStyle,
+          isActive ? activeLabelStyle : null,
+        ]}
+      >
         {label}
       </Animated.Text>
     </Pressable>

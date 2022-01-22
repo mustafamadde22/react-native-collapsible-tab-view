@@ -25,6 +25,7 @@ export type MaterialTabItemProps<T extends TabName> = {
    * Style to apply to the tab item label
    */
   labelStyle?: AnimatedTextStyle
+  activeLabelStyle?: StyleProp<TextStyle>
   inactiveOpacity?: number
   pressColor?: string
   pressOpacity?: number
@@ -71,6 +72,10 @@ export type MaterialTabBarProps<N extends TabName> = TabBarProps<N> & {
    * Style to apply to the tab item label
    */
   labelStyle?: AnimatedTextStyle
+  /**
+   * Style to apply to the active tab item label
+   */
+  activeLabelStyle?: StyleProp<TextStyle>
   /**
    * Color applied to the label when active
    */
