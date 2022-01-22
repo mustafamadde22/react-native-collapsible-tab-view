@@ -38,9 +38,9 @@ const Indicator: React.FC<IndicatorProps> = ({
         ? interpolate(
             indexDecimal.value,
             itemsLayout.map((_, i) => i),
-            itemsLayout.map((v) => v.width)
+            itemsLayout.map((v) => v.width - 32)
           )
-        : itemsLayout[0]?.width
+        : itemsLayout[0]?.width - 32
 
     return {
       transform,
