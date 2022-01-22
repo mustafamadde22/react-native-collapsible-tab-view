@@ -54,6 +54,7 @@ const MaterialTabBar = <T extends TabName = any>({
   tabProps,
   contentContainerStyle,
   labelStyle,
+  activeLabelStyle,
   inactiveColor,
   activeColor,
   tabStyle,
@@ -213,6 +214,7 @@ const MaterialTabBar = <T extends TabName = any>({
             scrollEnabled={scrollEnabled}
             indexDecimal={indexDecimal}
             labelStyle={labelStyle}
+            activeLabelStyle={activeLabelStyle}
             activeColor={activeColor}
             inactiveColor={inactiveColor}
             style={tabStyle}
